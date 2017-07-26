@@ -1,14 +1,15 @@
 var app = angular.module('apiDemo');
 
-app.service('quoteService', function($http, $route){
+app.service('quoteService', function($http, $location, $route){
 
-		var quote = [];
+		var quote = {};
 
 
 		return {
 			getMovieQuote: getMovieQuote,
 			getFamousQuote: getFamousQuote,
-			getQuote: getQuote
+			getQuote: getQuote,
+			getSource: getSource
 
 		}
 
@@ -24,6 +25,7 @@ app.service('quoteService', function($http, $route){
 			console.log(response.data)
 			quote = response.data;
 			$route.reload();
+			$location.path('/output')
 			console.log(quote)
 			});
 
@@ -39,13 +41,19 @@ app.service('quoteService', function($http, $route){
 			}
 		}).then(function succesfulCallback(response){
 			console.log(response.data)
+			quote = response.data;
+			$route.reload();
+			$location.path('/output')
 		});
 
 
 		}
 
 		function getQuote(){
-			return quote
+			return quote.quote 
+		}
+		function getSource(){
+			return " -" + quote.author
 		}
 
 

@@ -11,7 +11,7 @@ app.controller('inputCtrl', function($scope, quoteService){
 		quoteService.getFamousQuote()
 	};
 
-	$scope.test = quoteService.getQuote();
+
 		
 
 });

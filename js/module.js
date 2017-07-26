@@ -7,5 +7,9 @@ app.config(function($routeProvider){
 		controller: 'inputCtrl',
 		templateUrl: 'partials/input.html'
 	})
+	.when('/output', {
+		controller: 'outputCtrl',
+		templateUrl: 'partials/output.html'
+	})
 	.otherwise({redirectTo: '/input'})
 })
