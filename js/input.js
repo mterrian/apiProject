@@ -1,17 +1,17 @@
-var app = angular.module('apiDemo')
+var app = angular.module('apiDemo');
 
-app.controller('inputCtrl', function($scope, $http){
+app.controller('inputCtrl', function($scope, quoteService){
 
-		$http({
-			method: 'GET',
-			url: 'https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous&count=10',
-			header: {
-				"X-Mashape-Key": "udmuECNtasmshZfkTrYejx0L2b0wp1xAaXUjsnLtaG3CHtMNrp",
-				"accept": "application/json"
-			}
-		}).then(function succesfulCallback(response){
-			console.log(response)
-		});
+	$scope.getMovieQuote = function(){
+		quoteService.getMovieQuote() 
 
+	};
+
+	$scope.getFamousQuote = function(){
+		quoteService.getFamousQuote()
+	};
+
+	$scope.test = quoteService.getQuote();
+		
 
 });
