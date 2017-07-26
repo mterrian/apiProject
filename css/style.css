@@ -1,0 +1,15 @@
+html {
+  background-color: #FCF8A9;
+}
+.container {
+  font-family: Georgia;
+  text-align: center;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.buttonDIV {
+  text-align: center;
+  margin: 0 auto;
+  width: 800px;
+}

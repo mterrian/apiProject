@@ -22,7 +22,7 @@ app.service('quoteService', function($http, $location, $route){
 				"accept": "application/json"
 			}
 			}).then(function succesfulCallback(response){
-			console.log(response.data)
+			// console.log(response.data)
 			quote = response.data;
 			$route.reload();
 			$location.path('/output')
@@ -50,7 +50,7 @@ app.service('quoteService', function($http, $location, $route){
 		}
 
 		function getQuote(){
-			return quote.quote 
+			return quote.quote
 		}
 		function getSource(){
 			return " -" + quote.author
